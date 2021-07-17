@@ -1,0 +1,12 @@
+Solution 1 commands: 
+    1. docker run -d --rm -it --name detyra ubuntu sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+    2. docker exec -it detyra bash
+        2.1 apt update
+        2.2 apt upgrade
+        2.3 apt install curl
+    3. docker attach detyra
+        3.1 type: helsinki.fi 
+    
+Solution 2:
+    1. docker run -d --rm -it --name detyra ubuntu sh -c 'apt-get update; apt-get install curl -y; echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+    2. docker attach detyra
